@@ -1,6 +1,6 @@
 GOROOT ?= /opt/go
 
-BIN = helloworld echo1 echo2 echo3 args 1.1 1.2 1.3
+BIN = helloworld echo1 echo2 echo3 args 1.1 1.2 1.3 dup1
 
 all : $(BIN)
 
@@ -20,6 +20,8 @@ args : args.go
 	go build 1.2.go
 1.3 : 1.3.go
 	go build 1.3.go
+dup1 : dup1.go
+	go build dup1.go
 
 clean :
 	rm -rf $(BIN)

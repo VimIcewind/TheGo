@@ -1,4 +1,11 @@
 tags
 TAGS
 
+.idea
+.ipr
+.imr
+.iws
+.iml
+.ids
+
 *.swp

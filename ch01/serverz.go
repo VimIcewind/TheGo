@@ -1,4 +1,4 @@
-// Servery is a server which will show lissajous.
+// Serverz is a server which will show lissajous.
 package main
 
 import (
@@ -21,10 +21,9 @@ const (
 )
 
 func main() {
-	handler := func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		lissajous(w)
-	}
-	http.HandleFunc("/", handler) // each request calls handler
+	}) // each request calls handler
 	log.Fatal(http.ListenAndServe("localhost:8000", nil))
 }
 

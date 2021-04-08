@@ -15,11 +15,11 @@ func main() {
 			fmt.Fprintf(os.Stderr, "fetch: %v\n", err)
 			os.Exit(1)
 		}
-		if _, err := io.Copy(os.Stdout, resp.Body); err != nil {
-			resp.Body.Close()
+		_, err = io.Copy(os.Stdout, resp.Body)
+		resp.Body.Close()
+		if err != nil {
 			fmt.Fprintf(os.Stderr, "fetch: reading %s: %v\n", url, err)
 			os.Exit(1)
 		}
-		resp.Body.Close()
 	}
 }

@@ -2,7 +2,7 @@ GOROOT ?= /opt/go
 
 BIN = helloworld echo1 echo2 echo3 args 1.1 1.2 1.3 dup1 dup2 dup3 1.4 lissajous \
       1.5 1.6 fetch 1.7 1.8 1.9 fetchall 1.10 1.11 server1 server2 server3 \
-      serverx servery serverz 1.12 switch
+      serverx servery serverz 1.12 switch type
 
 all : $(BIN)
 
@@ -66,6 +66,8 @@ serverz : serverz.go
 	go build 1.12.go
 switch : switch.go
 	go build switch.go
+type : type.go
+	go build type.go
 
 clean :
 	rm -rf $(BIN) *.gif

@@ -8,4 +8,5 @@ TAGS
 .iml
 .ids
 
+*.exe
 *.swp
